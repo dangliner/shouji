@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<div class="home">
+	<section class="site-header">
+		<h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl }}">{{ site.title }}</a></h1>
+		{% include nav.html %}
+		{% include intro.html %}
+	</section>
+	<section>
+		<ul class="post-list">
+			{% for post in site.posts %}
+			<li>
+				<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+			</li>
+			{% endfor %}
+		</ul>
+		<p>More in my blog <a href="{{ '/blog' | prepend: site.baseurl }}"> >></p>
+		<hr>
+	</section>
+	<section>
+		<ul class="post-list">
+			{% for insta in site.instalife limit: 5 %}
+			<li>
+				<a href="{{ insta.url | prepend: site.baseurl }}">{{ insta.title }}</a> <time datetime="{{ insta.date | date_to_xmlschema }}">{{ insta.date | date: "%b %d, %Y" }}</time>
+				{{ insta.content }}
+			</li>
+			{% endfor %}
+		</ul>
+		<p>More in my instalife <a href="{{ '/instalife' | prepend: site.baseurl }}"> >></p>
+		<hr>
+	</section>
+</div>
