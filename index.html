@@ -22,7 +22,7 @@ layout: default
 		<ul class="post-list">
 			{% for insta in site.instalife limit: 5 %}
 			<li>
-				<a href="{{ insta.url | prepend: site.baseurl }}">{{ insta.title }}</a> <time datetime="{{ insta.date | date_to_xmlschema }}">{{ insta.date | date: "%b %d, %Y" }}</time>
+				<a href="{{ insta.url | prepend: site.baseurl }}"><time datetime="{{ insta.date | date_to_xmlschema }}">{{ insta.date | date: "%b %d, %Y" }}</time></a>
 				{{ insta.content }}
 			</li>
 			{% endfor %}
